@@ -30,6 +30,7 @@ urlpatterns = patterns('',
 	url(r'^Change/(.+)/$',Change),
 	url(r'^AddAuthor/$',AddAuthor),
 )
+#cms.hit.edu.cn
 
 
 
