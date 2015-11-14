@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form method="post">
+<table border=1 align="center">
+<tr>
+<th>ISBN</th>
+<th>Title</th>
+<th>Author</th>
+<th>Publisher</th>
+<th>PublishDate</th>
+<th>Price</th>
+</tr>
+ <tr>
+  <td><input name="ISBN" type="text"></td>
+  <td><input name="Title" type="text"></td>
+  <td><select name="select"  >
+    <!--<option value="option.AuthorID">选择作者</option>-->
+	{% for option in options2 %}
+	<option value="{{option.AuthorID}}">{{option.Name}}</option>
+	{% endfor %}
+    </select></td>
+  <td><input name="Publisher" type="text"></td>
+  <td><input name="PublishDate" type="date"></td>
+  <td><input name="Price" type="text"></td>
+  <td><input type="submit" value="保存"><input type="reset" value="重填"></td>
+ </tr>
+</table>
+</form>
+<a href="/home/">返回首页</a>

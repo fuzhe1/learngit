@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<body>
+<form method="post">
+<tr>
+  <div class="text" style=" text-align:center;"><td><input name="Name" type="text"></td>
+  <input type="submit" value="确认">
+  </div>
+</tr>
+<tr>
+<a href="/home/">返回首页</a>
+</tr>
+<table border = '1' cellpadding="20" align="center">
+<tr>
+<th>ISBN</th>
+<th>Title</th>
+<th>AuthorName</th>
+<th>Publisher</th>
+<th>PublishDate</th>
+<th>Price</th>
+</tr>
+
+<tr>
+{% for option in options %}
+<tr>
+<td>{{option.ISBN}}</td>
+<td>{{option.Title}}</td>
+<td>{{option.AuthorID.Name}}</td>
+<td>{{option.Publisher}}</td>
+<td>{{option.PublishDate}}</td>
+<td>{{option.Price}}</td>
+</tr>
+{% endfor %}
+</tr>
+
+</body>
+</html>

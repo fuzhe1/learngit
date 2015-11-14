@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<title>图书数据库</title>
+<body>
+<div class="text" style=" text-align:center;"><h1> 图书数据库 </h1>
+</div>
+<form method="get">
+<table border = '1' cellpadding="20" align="center">
+{% if options %}
+{% for option in options %}
+	<tr>
+	<td><a href="/Information/{{ option.ISBN}}">{{ option.Title }}</a></td>
+	<td><a href="/Change/{{ option.ISBN}}">更新图书</a></td>
+	<td><button name="Delete" value="{{option.ISBN}}">删除</button></td>
+	</tr>
+{% endfor %}
+{% endif %}
+
+	<div class="text" style=" text-align:center;"><a href="/Add/">新增图书</a>
+	</div>
+	<br>
+	<div class="text" style=" text-align:center;"><a href="/Search/">查询作者</a>
+	</div>
+	<br>
+	<div class="text" style=" text-align:center;"><a href="/AddAuthor/">增加作者</a>
+	</div>
+	
+</form>
+</body>
+
+</html>

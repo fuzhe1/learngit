@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<title>图书信息</title>
+<body>
+<div class="text" style=" text-align:center;"><h1> 图书信息 </h1>
+</div>
+<table border = '1' cellpadding="20" align="center">
+<tr>
+<th>ISBN</th>
+<th>Title</th>
+<th>Author</th>
+<th>Publisher</th>
+<th>PublishDate</th>
+<th>Price</th>
+</tr>
+<tr>
+
+<td>{{book1.ISBN}}</td>
+<td>{{book1.Title}}</td>
+<form method="post">
+  <td><select name="select" id="select_k1" >
+    <option value="{{option.AuthorID}}">{{book1.AuthorID.Name}}</option>
+	{% for option in options2 %}
+	<option value="{{option.AuthorID}}">{{option.Name}}</option>
+	{% endfor %}
+    </select></td>
+<td>
+<input type="text" onFocus="this.value=''" value="{{book1.Publisher}}" name="Publisher">
+</td>
+<td>
+<input type="date" onFocus="this.value=''" value="{{book1.PublishDate}}" name="PublishDate">
+</td>
+<td>
+<input type="text" onFocus="this.value=''" value="{{book1.Price}}" name="Price">
+</td>
+<td><input type="submit" value="保存"></td>
+</form>
+</tr>
+<tr>
+<a href="/home/">返回首页</a>
+</tr>
+
+</table>
+</body>
+</html>
